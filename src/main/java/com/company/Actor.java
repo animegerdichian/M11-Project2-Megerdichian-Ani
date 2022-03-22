@@ -1,7 +1,7 @@
 package com.company;
 
 public class Actor extends Person{
-    String role;
+    private String role;
 
     public Actor(String name, float paid, float earned, String role) {
         super(name, paid, earned);

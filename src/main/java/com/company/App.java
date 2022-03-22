@@ -2,7 +2,7 @@ package com.company;
 import java.util.List;
 import java.util.ArrayList;
 public class App {
-    public static void main(String args[]){
+    public static void main(String[] args){
 
         // create list of actors
         // the amount each actor should be paid is specified, but they have not yet
@@ -23,9 +23,9 @@ public class App {
         // the amount each crew member should be paid is specified, but they have not yet
         // earned that amount
         List<Crew> crew = new ArrayList<Crew>();
-        crew.add(new PA("Harriet Jacobsen",45, 0, "Design",992));
-        crew.add(new PA("David Mesic",45, 0, "Editing",800));
-        crew.add(new PA("Kira Tevi",45, 0, "Film Production",1100));
+        crew.add(new PA("Harriet Jacobsen",75, 0, "Design",992));
+        crew.add(new PA("David Mesic",75, 0, "Editing",800));
+        crew.add(new PA("Kira Tevi",75, 0, "Film Production",1100));
         crew.add(new Crew("Jenny Hendrick", 65000, 0, "Writing"));
         crew.add(new Crew("Sam Tovel", 65000, 0, "Writing"));
         crew.add(new Crew("Kyle Curry", 65000, 0, "Writing"));
@@ -46,18 +46,18 @@ public class App {
 
         movie.payday();
 
-        System.out.println("ACTOR EARNINGS");
+        System.out.format("%37s \n", "ACTOR EARNINGS");
+        System.out.format("%23s%18s \n", "NAME", "EARNINGS");
         for(Actor a : actors){
-            System.out.println(a.getName() + "        " + a.getEarned());
+            System.out.format("%25s%8s%.2f \n", a.getName()," ", a.getEarned());
+
         }
-        System.out.println("CREW EARNINGS");
-        for(Crew a : crew){
-            System.out.println(a.getName() + "        " + a.getEarned());
+        System.out.format("%37s \n", "CREW EARNINGS");
+        System.out.format("%23s%18s \n", "NAME", "EARNINGS");
+        for(Crew c : crew){
+            System.out.format("%25s%8s%.2f \n", c.getName()," ", c.getEarned());
         }
 
-        System.out.println("Director EARNINGS");
-        System.out.println("Name      Earnings     Royalties");
-        System.out.println(director.getName() + "     " + director.getEarned() + "     " + director.royalties);
 
     }
 }

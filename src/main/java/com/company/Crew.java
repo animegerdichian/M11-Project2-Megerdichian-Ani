@@ -1,7 +1,7 @@
 package com.company;
 
 public class Crew extends Person{
-    String department;
+    private String department;
 
 
     public Crew(String name, double paid, double earned, String department) {

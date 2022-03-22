@@ -2,7 +2,7 @@ package com.company;
 
 // should earn pay based on hours worked
 public class PA extends Crew{
-    double hoursWorked;
+    private double hoursWorked;
     public PA(String name, double paid, double earned, String department, double hoursWorked) {
         super(name, paid, earned, department);
         this.hoursWorked = hoursWorked;

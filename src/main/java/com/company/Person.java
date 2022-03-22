@@ -1,9 +1,9 @@
 package com.company;
 
 public class Person {
-    String name;
-    double paid;
-    double earned;
+    private String name;
+    protected double paid;
+    protected double earned;
 
     public Person(String name, double paid, double earned) {
         this.name = name;
