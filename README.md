@@ -13,9 +13,9 @@ Includes Classes:<br>
 ## Output
 The Movie Budget Manager prints a report of the Movie budget, spending, and profit, in addition to the earnings of all employees.
 <pre> 
-  MOVIE REPORT:
+  	MOVIE REPORT:
                  BUDGET       MONEY SPENT        MONEY EARNED              PROFIT 
-               1000000.00     1746900.00          9000000.00            8253100.00 
+               1000000.00     1929431.00          9000000.00            8070569.00 
 	DIRECTOR EARNINGS:
                    NAME          EARNINGS           ROYALTIES 
               Johanna Avi        182531.00          82531.00 
@@ -47,6 +47,5 @@ The Movie Budget Manager prints a report of the Movie budget, spending, and prof
           Sandra Robinson      Crew        65000.00 
                  Lisa Pak      Crew        65000.00 
             Mary Gonzales      Crew        65000.00 
-                 Tony Day      Crew        65000.00 
-
+                 Tony Day      Crew        65000.00
 </pre>
