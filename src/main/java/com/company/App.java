@@ -46,6 +46,13 @@ public class App {
 
         movie.payday();
 
+        generateReport(movie.getActors(), movie.getCrew());
+
+
+
+    }
+
+    public static void generateReport(List<Actor> actors, List<Crew> crew){
         System.out.format("%37s \n", "ACTOR EARNINGS");
         System.out.format("%23s%18s \n", "NAME", "EARNINGS");
         for(Actor a : actors){
@@ -57,7 +64,6 @@ public class App {
         for(Crew c : crew){
             System.out.format("%25s%8s%.2f \n", c.getName()," ", c.getEarned());
         }
-
 
     }
 }
