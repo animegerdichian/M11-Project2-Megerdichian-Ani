@@ -40,11 +40,10 @@ public class Movie {
         this.calculateProfit();
 
         // pay director royalties
-        //this.moneySpent += this.director.payday(this.profit);
-        this.director.payday(this.profit);
+        this.moneySpent += this.director.payday(this.profit);
 
         // update profit to account for director royalties
-        //this.calculateProfit();
+        this.calculateProfit();
     }
 
     // pay actors
