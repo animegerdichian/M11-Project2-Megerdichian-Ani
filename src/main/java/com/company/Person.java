@@ -1,5 +1,5 @@
 package com.company;
-
+// Person class is the parent class for the Actor and Crew classes
 public class Person {
     private String name;
     protected double paid;
@@ -35,6 +35,8 @@ public class Person {
         this.earned = earned;
     }
 
+    // method called by the movie class to distribute payment to objects of classes
+    // derived from the person class
     public double payday(){
         this.earned += this.paid; // pay the person the amount they should be paid
         this.paid = 0; // set paid to 0 as funds have been distributed

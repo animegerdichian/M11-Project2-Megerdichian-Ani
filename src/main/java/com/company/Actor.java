@@ -1,5 +1,6 @@
 package com.company;
-
+// Actor class is derived from the Person class
+// has a unique attribute of a role
 public class Actor extends Person{
     private String role;
 

@@ -1,5 +1,6 @@
 package com.company;
-
+// Crew class is derived from the Person class
+// has a unique attribute of a department
 public class Crew extends Person{
     private String department;
 

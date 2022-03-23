@@ -4,6 +4,9 @@ import java.util.ArrayList;
 public class App {
     public static void main(String[] args){
 
+        // instantiate a Person object
+        Person person = new Person("Janet Seymore", 100000, 0);
+
         // create list of actors
         // the amount each actor should be paid is specified, but they have not yet
         // earned that amount
@@ -19,7 +22,7 @@ public class App {
         actors.add(new Actor("Kenan Swan",50000,0,"Extra #3"));
         actors.add(new Actor("Eli Sachar",50000,0,"Extra #4"));
 
-        // Create list of crew
+        // Create list of crew - including PAs and general Crew members
         // the amount each crew member should be paid is specified, but they have not yet
         // earned that amount
         List<Crew> crew = new ArrayList<Crew>();
@@ -42,27 +45,42 @@ public class App {
         // create a director
         Director director = new Director("Johanna Avi", 100000, 0, "Film Production",0);
 
-        Movie movie = new Movie("Horror", director, actors, crew, 1000000, 0, 30000000, 0);
+        // create a movie
+        Movie movie = new Movie("Horror", director, actors, crew, 1000000, 0, 9000000, 0);
 
+        // call movie payday method to distribute pay to all employees
         movie.payday();
 
-        generateReport(movie.getActors(), movie.getCrew());
-
-
-
+        // generate a report of the movie's financial information
+        generateReport(movie);
     }
 
-    public static void generateReport(List<Actor> actors, List<Crew> crew){
-        System.out.format("%37s \n", "ACTOR EARNINGS");
+    public static void generateReport(Movie movie){
+        System.out.println("\tMOVIE REPORT:");
+        System.out.format("%23s%18s%20s%20s \n", "BUDGET", "MONEY SPENT", "MONEY EARNED", "PROFIT");
+        System.out.format("%15s%.2f%5s%.2f%10s%.2f%12s%.2f \n", " ", movie.getBudget()," ",movie.getMoneySpent()," ", movie.getMoneyEarned(), " ", movie.getProfit());
+
+        System.out.println("\tDIRECTOR EARNINGS:");
+        System.out.format("%23s%18s%20s \n", "NAME", "EARNINGS", "ROYALTIES");
+        System.out.format("%25s%8s%.2f%10s%.2f \n", movie.getDirector().getName()," ", movie.getDirector().getEarned(), " ", movie.getDirector().getRoyalties());
+
+        System.out.println("\tACTOR EARNINGS:");
         System.out.format("%23s%18s \n", "NAME", "EARNINGS");
-        for(Actor a : actors){
+        for(Actor a : movie.getActors()){
             System.out.format("%25s%8s%.2f \n", a.getName()," ", a.getEarned());
 
         }
-        System.out.format("%37s \n", "CREW EARNINGS");
-        System.out.format("%23s%18s \n", "NAME", "EARNINGS");
-        for(Crew c : crew){
-            System.out.format("%25s%8s%.2f \n", c.getName()," ", c.getEarned());
+        System.out.println("\tCREW EARNINGS:");
+        System.out.format("%23s%13s%15s \n", "NAME", "ROLE", "EARNINGS");
+        String crewType = "";
+        for(Crew c : movie.getCrew()){
+            if (c instanceof PA){
+                crewType = "PA";
+            }
+            else{
+                crewType = "Crew";
+            }
+            System.out.format("%25s%10s%8s%.2f \n", c.getName(),crewType," ", c.getEarned());
         }
 
     }
